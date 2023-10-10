@@ -201,7 +201,20 @@
 
 
 
-       BABYLON.SceneLoader.ImportMeshAsync("", "./stl/", "1.stl").then((result) => {
+       BABYLON.SceneLoader.ImportMeshAsync("", "./stl/", "izu1.stl").then((result) => {
+         result.meshes[0].position.x = -10;
+         result.meshes[0].position.y = 3;
+         result.meshes[0].position.z = 0;
+
+         result.meshes[0].scaling.x = 0.1;
+         result.meshes[0].scaling.y = 0.1;
+         result.meshes[0].scaling.z = 0.1;
+
+         result.meshes[0].rotate(BABYLON.Axis.X, BABYLON.Tools.ToRadians(-95), BABYLON.Space.LOCAL);
+       });
+      
+
+       BABYLON.SceneLoader.ImportMeshAsync("", "./stl/", "izu2.stl").then((result) => {
          result.meshes[0].position.x = 0;
          result.meshes[0].position.y = 3;
          result.meshes[0].position.z = 0;
@@ -214,21 +227,8 @@
        });
       
 
-       BABYLON.SceneLoader.ImportMeshAsync("", "./stl/", "2.stl").then((result) => {
+       BABYLON.SceneLoader.ImportMeshAsync("", "./stl/", "wt1.stl").then((result) => {
          result.meshes[0].position.x = 10;
-         result.meshes[0].position.y = 3;
-         result.meshes[0].position.z = 0;
-
-         result.meshes[0].scaling.x = 0.1;
-         result.meshes[0].scaling.y = 0.1;
-         result.meshes[0].scaling.z = 0.1;
-
-         result.meshes[0].rotate(BABYLON.Axis.X, BABYLON.Tools.ToRadians(-95), BABYLON.Space.LOCAL);
-       });
-      
-
-       BABYLON.SceneLoader.ImportMeshAsync("", "./stl/", "3.stl").then((result) => {
-         result.meshes[0].position.x = 20;
          result.meshes[0].position.y = 3;
          result.meshes[0].position.z = 0;
 
