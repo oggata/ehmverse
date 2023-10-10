@@ -127,7 +127,7 @@
         
         const WallMat = new BABYLON.StandardMaterial("lMat");
         //WallMat.diffuseColor = new BABYLON.Color3(0,1,1);
-        WallMat.diffuseColor = color3;
+        WallMat.diffuseColor = color1;
         var wall1 = BABYLON.MeshBuilder.CreateBox(
           "box",
           {
@@ -195,11 +195,13 @@
         var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
         skyboxMaterial.backFaceCulling = false;
         //skyboxMaterial.diffuseColor = new BABYLON.Color3(255, 0, 0);
-        skyboxMaterial.diffuseColor = color2;
+        skyboxMaterial.diffuseColor = color1;
         //skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
         skybox.material = skyboxMaterial;
 
 
+        var mat = new BABYLON.StandardMaterial("ground", scene);
+        mat.diffuseColor = color1
 
        BABYLON.SceneLoader.ImportMeshAsync("", "./stl/", "izu1.stl").then((result) => {
          result.meshes[0].position.x = -10;
@@ -209,6 +211,10 @@
          result.meshes[0].scaling.x = 0.1;
          result.meshes[0].scaling.y = 0.1;
          result.meshes[0].scaling.z = 0.1;
+
+         
+
+          result.meshes[0].material = mat;
 
          result.meshes[0].rotate(BABYLON.Axis.X, BABYLON.Tools.ToRadians(-95), BABYLON.Space.LOCAL);
        });
@@ -223,6 +229,8 @@
          result.meshes[0].scaling.y = 0.1;
          result.meshes[0].scaling.z = 0.1;
 
+         result.meshes[0].material = mat;
+
          result.meshes[0].rotate(BABYLON.Axis.X, BABYLON.Tools.ToRadians(-95), BABYLON.Space.LOCAL);
        });
       
@@ -235,6 +243,8 @@
          result.meshes[0].scaling.x = 0.1;
          result.meshes[0].scaling.y = 0.1;
          result.meshes[0].scaling.z = 0.1;
+
+         result.meshes[0].material = mat;
 
          result.meshes[0].rotate(BABYLON.Axis.X, BABYLON.Tools.ToRadians(-95), BABYLON.Space.LOCAL);
        });
